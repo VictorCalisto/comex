@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+
+  ruby:
+    container_name: ruby
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - gems:/usr/local/bundle
+    depends_on:
+      - postgres  
+    networks:
+      - my_network
+
+  postgres:
+    container_name: postgres
+    image: postgres:16-bookworm
+    restart: always
+    environment:
+      #host do banco
+      POSTGRES_DB: db_estoque
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - data:/var/lib/postgresql/data
+      # sudo rm -rf data
+    ports:
+      - 5432:5432
+    networks:
+      - my_network
+      
+networks:
+  my_network:
+
+volumes:
+  gems:
+  data:
