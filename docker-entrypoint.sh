@@ -9,7 +9,7 @@ diretorio="/app"
 # Verifica se o Gemfile.lock existe no diretório
 if [ -e "$diretorio/Gemfile.lock" ];
 then
-  bundle install
+  bundle install &&
   echo "Já existe um Gemfile.lock no diretório $diretorio."
   rails db:create
   rails db:migrate
@@ -27,10 +27,7 @@ else
 
   # Crie um novo projeto Rails
   rails new .
-  bundle install
-
-  # Aguarda um breve período para garantir que o processo tenha terminado
-  sleep 5
+  bundle install &&
 
   # Copia os arquivos da pasta /tmp de volta para a pasta atual, sobrescrevendo os existentes
   cp /tmp/Dockerfile /tmp/docker-compose.yml /tmp/.gitignore /tmp/.dockerignore /tmp/docker-entrypoint.sh .
@@ -50,3 +47,4 @@ exec bundle exec rails s -p 3000 -b 0.0.0.0
 
 # Executa o comando principal (a aplicação Rails)
 exec "$@"
+
