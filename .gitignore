@@ -4,12 +4,71 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-
 /data/
-/.idea/
-/.DS_Store
-/app/.DS_Store
-/app/assets/.DS_Store
+**/.idea/
+**/.vscode/
+**/.DS_Store
+/vendor/bundle
+.irb_history
+byebug_history
+/public/packs/**
+/public/packs-test
+config/puma_dev.rb
+.rspec
+/spec/reports/
+.cache/
+.ash_history
+config/rest.http
+/config/newrelic.yml
+
+# SVN
+.svn/
+
+# /
+/node_modules
+/tmp
+/coverage
+/.generators
+/.rakeTasks
+
+# /config/
+/config/database.yml
+/config/resque.yml
+/config/resque-pool.yml
+/config/unicorn/localhost.rb
+/config/unicorn/localhost-docker.rb
+
+# log/
+log/
+public/*.xls
+
+# /public/
+/public/assets
+/coverage
+
+# /vendor/assets/
+/vendor/assets/bower_components
+/bower_components
+/vendor/assets/.bowerrc
+
+## File-based project format:
+*.iws
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+#Arquivo sistema Mac
+.DS_Store
+/config/unicorn/localhost.rb
+
+#Arquivo de configuração pessoal do VSCode
+settings.json
 
 # Ignore bundler config.
 /.bundle
