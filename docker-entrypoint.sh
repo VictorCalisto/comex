@@ -26,7 +26,7 @@ else
   cp Dockerfile docker-compose.yml .gitignore .dockerignore docker-entrypoint.sh /tmp
 
   # Crie um novo projeto Rails
-  rails new .
+  rails new . &&
   bundle install &&
 
   # Copia os arquivos da pasta /tmp de volta para a pasta atual, sobrescrevendo os existentes
