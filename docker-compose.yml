@@ -14,8 +14,6 @@ services:
       - gems:/usr/local/bundle
     depends_on:
       - postgres  
-    networks:
-      - my_network
 
   postgres:
     container_name: postgres
@@ -29,11 +27,6 @@ services:
       # sudo rm -rf data
     ports:
       - 5432:5432
-    networks:
-      - my_network
-      
-networks:
-  my_network:
 
 volumes:
   gems:
