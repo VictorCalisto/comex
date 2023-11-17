@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: comex
+  label:
+    app: comex
+spec:
+  containers:
+    - name: comex
+      image: victorcalisto/comex:02
+      ports:
+      - containerPort: 3000
+      

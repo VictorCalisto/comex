@@ -1,0 +1,13 @@
+kind: Service
+metadata:
+  labels:
+    app: comex
+  name: comex
+spec:
+  type: LoadBalancer # é o mais completo, incorpora o  ClusterIP e o NodePort
+  ports:
+  - port: 5000 # service port
+    nodePort: 31000 # node port
+    targetPort: 3000 # container
+  selector:
+    app: comex

@@ -1,0 +1,27 @@
+apiVersion: apps/v1 #deploymente tem que ser nessa versao
+kind: Deployment # tipo certo para deploy
+metadata:
+  name: comex-deploy
+  label:
+    app: comex
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: comex
+  templete: # cria vairos containers, nao precisa criar antes porque aqui ja cria
+    metadata:
+      labels:
+        app: comex
+    spec:
+      containers:
+      - name: comex
+        image: victorcalisto/comex:02
+        ports:
+        - containerPort: 3000
+        readinessProbe: # o container so esta pronto quando ...
+          tcpSocket: # ... a porta tcp estiver aberta ...
+            port: 3000 # ... na porta tres mil .
+          periodSeconds: 2 # verifica a cada 2 segundos se esta aberta na tres mil.
+
+      
