@@ -1,10 +1,8 @@
 # See https://docs.docker.com/engine/reference/builder/#dockerignore-file for more about ignoring files.
 
-/.git/
 /.idea/
-/.DS_Store
-/app/.DS_Store
-/app/assets/.DS_Store
+**/.DS_Store
+
 
 # Ignore git directory.
 /.git/

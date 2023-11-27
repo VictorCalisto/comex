@@ -4,7 +4,6 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-/data/
 **/.idea/
 **/.vscode/
 **/.DS_Store
@@ -20,6 +19,15 @@ config/puma_dev.rb
 .ash_history
 config/rest.http
 /config/newrelic.yml
+/nbproject/
+/.vs/
+/.gradle/
+/.xcodeproj/
+/.idea/
+/.sublime-project
+/.sublime-workspace
+/.atom/
+/.ipynb_checkpoints/
 
 # SVN
 .svn/
@@ -33,6 +41,7 @@ config/rest.http
 
 # /config/
 /config/database.yml
+/config/database.yaml
 /config/resque.yml
 /config/resque-pool.yml
 /config/unicorn/localhost.rb
