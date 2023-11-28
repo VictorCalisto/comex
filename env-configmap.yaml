@@ -1,8 +1,13 @@
+# ConfigMap para senhas
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: env-configmap
 data:
+  MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+  MYSQL_DATABASE: ${MYSQL_DATABASE}
+  MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+  IP_SISTEMA: ${IP_SISTEMA}
   HOST_DB: ${HOST_DB}
   USER_DB: ${USER_DB}
   PASS_DB: ${PASS_DB}

@@ -1,0 +1,13 @@
+# ClusterIP Service para acessar o banco de dados apenas por dentro do kubernetes
+apiVersion: v1
+kind: Service
+metadata:
+  name: your-db-service
+spec:
+  selector:
+    app: your-db
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432
+  clusterIP: None
