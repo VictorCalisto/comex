@@ -4,10 +4,10 @@ kind: Service
 metadata:
   name: your-db-service
 spec:
+  ports:
+  - port: 3306
+    protocol: TCP
+    targetPort: 3306
   selector:
     app: your-db
-  ports:
-    - protocol: TCP
-      port: 5432
-      targetPort: 5432
-  clusterIP: None
+  type: ClusterIP

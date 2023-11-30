@@ -1,0 +1,14 @@
+# ConfigMap para senhas
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-configmap
+data:
+  MYSQL_ROOT_PASSWORD: q1w2e3r4
+  MYSQL_DATABASE: empresa
+  MYSQL_PASSWORD: q1w2e3r4
+  IP_SISTEMA: http://localhost:30001
+  HOST_DB: your-db-service:3306
+  USER_DB: root
+  PASS_DB: q1w2e3r4
+  DATABASE_DB: empresa

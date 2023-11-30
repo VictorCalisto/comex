@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Protocolo de CI (Continuous Integration - Integração Contínua)
+
 # Carrega as variáveis do arquivo .env
 if [ -f .env ]; then
   source .env

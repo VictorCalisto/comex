@@ -1,0 +1,13 @@
+# é closterIP se fose API seria LoadBalance para liberar acesso externo
+apiVersion: v1
+kind: Service
+metadata:
+  name: your-app-back-service
+spec:
+  ports:
+    - port: 30001
+      protocol: TCP
+      targetPort: 30001
+  selector:
+    app: your-app-back
+  type: LoadBalancer

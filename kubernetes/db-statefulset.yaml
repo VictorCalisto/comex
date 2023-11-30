@@ -1,0 +1,31 @@
+# Deploy para o banco de dados com persistencia de volume
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: your-db-statefulset
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: your-db
+  template:
+    metadata:
+      labels:
+        app: your-db
+    spec:
+      containers:
+        - name: your-db-container
+          image: aluracursos/mysql-db:1
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: env-configmap
+          volumeMounts:
+            - name: your-db-data
+              mountPath: "/var/lib/mysql"
+      volumes:
+        - name: your-db-data
+          persistentVolumeClaim:
+            claimName: your-db-data
+
