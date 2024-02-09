@@ -24,7 +24,7 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em s
     ```
 3. **Construa e inicie o projeto usando o Docker Compose:**
     ```bash
-        docker-compose up --build
+        docker-compose up --build -d
     ```
 Isso inicializará o projeto "comex" e o executará em um contêiner Docker com um banco de dados PostgreSQL.
 
