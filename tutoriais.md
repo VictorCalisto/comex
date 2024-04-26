@@ -17,6 +17,33 @@ Modifique o arquivo .rspec na pasta raiz adicionando :
 --format documentation
 ```
 Apague a pasta do mini teste.
+```bash
+rm -rf test
+```
+# Trocando database.yml
+Lembre-se de trocar o database.yml. Basta ir em config/database.yml e subistituir o arquivo gerado por :
+```yaml
+default: &default
+  adapter: postgresql
+  port: 5432
+  encoding: unicode
+  host: postgres
+  database: postgres
+  username: postgres
+  password:
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
+```
+Essa é só uma base, você pode se inspirar e gerar algo seu. Olhe os comentarios do docker-compose.yml.
 # Trocando Dockerfile
 Para criar sua aplicacao você está usando um Dockerfile paralelo que gera um container debugavel. Para trocalo basta acrescentar ao seu Dockerfile atual o seguinte final:
 
