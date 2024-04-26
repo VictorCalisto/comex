@@ -1,5 +1,22 @@
 # RSpec
+primerio adicione a gem com o comando :
+```bash
+bundle add rspec-rails -g 'test'
+```
+Isso vai gerar a gem já no Gemfile na versão correta. Você até pode deixar ai, mas é melhor copiar e colar no grupo de teste.
 
+Agora vamos rodar
+```bash
+bundle install
+```
+```bash
+rails generate rspec:install
+```
+Modifique o arquivo .rspec na pasta raiz adicionando :
+```bash
+--format documentation
+```
+Apague a pasta do mini teste.
 # Trocando Dockerfile
 Para criar sua aplicacao você está usando um Dockerfile paralelo que gera um container debugavel. Para trocalo basta acrescentar ao seu Dockerfile atual o seguinte final:
 
