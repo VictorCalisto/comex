@@ -1,3 +1,4 @@
+# Fixe a sua versao de rubi ao subir o projeto
 FROM ruby
 
 # Atualizar os pacotes e instalar as dependências
@@ -34,3 +35,6 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["sh","/usr/local/bin/docker-entrypoint.sh"]
+
+# Torna o container debugavel
+CMD ["sh", "-c", "sleep infinity"]

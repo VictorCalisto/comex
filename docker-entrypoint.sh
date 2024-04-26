@@ -3,14 +3,11 @@
 # Aguarda um breve período para garantir que o processo principal tenha iniciado
 sleep 5
 
-# Diretório onde você deseja verificar a existência do Gemfile.lock
-diretorio="/app"
-
-# Verifica se o Gemfile.lock existe no diretório
-if [ -e "$diretorio/Gemfile.lock" ];
+# Verifica se o Gemfile existe no diretório Raiz
+if [ -e "./Gemfile" ];
 then
   bundle install &&
-  echo "Já existe um Gemfile.lock no diretório $diretorio. Executando create e migrate ..."
+  echo "Já existe um Gemfile no diretório Raiz. Executando create e migrate ..."
   rails db:create
   rails db:migrate
   if rails db:version 2>/dev/null; then
@@ -20,7 +17,7 @@ then
     echo "Comandos de seed concluídos, o banco de dados está pronto."
   fi
 else
-  echo "Nenhum Gemfile.lock encontrado. Criando um novo projeto Rails..."
+  echo "Nenhum Gemfile encontrado. Criando um novo projeto Rails..."
 
   # Copia os arquivos para a pasta /tmp
   cp Dockerfile docker-compose.yml .gitignore .dockerignore README.md /tmp
@@ -35,7 +32,7 @@ else
   # Limpa a pasta /tmp
   rm /tmp/Dockerfile /tmp/docker-compose.yml /tmp/.gitignore /tmp/.dockerignore /tmp/README.md
   
-  echo "Novo projeto Rails foi criado no diretório $diretorio."
+  echo "Novo projeto Rails foi criado no diretório Raiz."
 fi
 
 # Limpa o PID
