@@ -43,7 +43,7 @@ test:
 production:
   <<: *default
 ```
-Essa é só uma base, você pode se inspirar e gerar algo seu. Olhe os comentarios do docker-compose.yml.
+Antes de fazer o deploy para produção coloque uma senha no banco. Coloque essa senha em um arquivo .env para não ser versionado. E atraves de uma variavel de ambiente ecoe essa senha para o database.yml.
 # Trocando Dockerfile
 Para criar sua aplicacao você está usando um Dockerfile paralelo que gera um container debugavel. Para trocalo basta acrescentar ao seu Dockerfile atual o seguinte final:
 
