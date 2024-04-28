@@ -7,7 +7,7 @@ Isso vai gerar a gem já no Gemfile na versão correta. Você até pode deixar a
 
 Agora vamos rodar
 ```bash
-bundle install
+bundle install -j $(nproc)
 ```
 ```bash
 rails generate rspec:install

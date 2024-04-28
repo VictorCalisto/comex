@@ -6,7 +6,7 @@ sleep 5
 # Verifica se o Gemfile existe no diretório Raiz
 if [ -e "./Gemfile" ];
 then
-  bundle install &&
+  bundle install -j $(nproc) &&
   echo "Já existe um Gemfile no diretório Raiz. Executando create e migrate ..."
   rails db:create
   rails db:migrate
@@ -24,7 +24,7 @@ else
 
   # Crie um novo projeto Rails
   rails new . --css=bootstrap --javascript=esbuild &&
-  bundle install &&
+  bundle install -j $(nproc) &&
 
   # Copia os arquivos da pasta /tmp de volta para a pasta atual, sobrescrevendo os existentes
   cp /tmp/Dockerfile /tmp/docker-compose.yml /tmp/.gitignore /tmp/.dockerignore /tmp/README.md .
