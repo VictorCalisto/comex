@@ -32,7 +32,11 @@ Isso inicializará o projeto "comex" e o executará em um contêiner Docker com 
 O projeto "comex" é uma aplicação Ruby on Rails inicial. Você pode acessá-lo, digitando http://localhost:3000 em seu navegador da web. O banco postgre esta acessivel em http://localhost:5432
 
 ## Parando o Projeto
-Para parar o projeto e encerrar o contêiner Docker, pressione Ctrl + C no seu terminal. Isso interromperá a execução dos contêineres.
+Para parar o projeto e encerrar o contêiner Docker:
+   ```bash
+        docker-compose down
+   ```
+Isso interromperá a execução dos contêineres.
 
 ## Licença
 Este projeto é de código aberto e segue os princípios do libertarianismo anarco-capitalista. Sinta-se à vontade para usá-lo e adaptá-lo de acordo com suas necessidades.
